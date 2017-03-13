@@ -3,15 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.team33.libs</groupId>
     <artifactId>team33-messaging</artifactId>
-    <version>8.0.1-SNAPSHOT</version>
+    <version>8.1.1-SNAPSHOT</version>
     <!--version>7.1.3</version-->
     <name>Team33 Messaging Library</name>
     <description>Team33 messaging library</description>
-    <!-- TODO: scm>
-        <connection>scm:svn:svn://svn.team33.net/team33-main/libs/lib-general-7/trunk</connection>
-        <developerConnection>scm:svn:svn://svn.team33.net/team33-main/libs/lib-general-7/trunk</developerConnection>
-        <url>svn://svn.team33.net/team33-main/libs/lib-general-7/trunk</url>
-    </scm -->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -28,7 +23,6 @@
     </dependencies>
     <properties>
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
-        <!-- t33.scm.svn.url>svn://svn.team33.net/team33-main/libs/lib-general-7/trunk</t33.scm.svn.url -->
         <t33.java.version>1.8</t33.java.version>
     </properties>
     <build>
