@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 import static org.junit.Assert.assertEquals;
 
@@ -41,5 +42,26 @@ public class RouterTest {
                 .filter(e -> !Objects.equals(e, Math.PI))
                 .forEach(entry ->
                         assertEquals(278, entry));
+    }
+
+    @Test
+    public final void remove() {
+        final List<Object> target = new LinkedList<>();
+        final Router router = new Router();
+        final Consumer<Number> consumer = target::add;
+        router.getRegister(Number.class).add(consumer);
+
+        router.accept(278);
+
+        assertEquals(1, target.size());
+        target.forEach(entry ->
+                assertEquals(278, entry));
+
+        router.remove(consumer);
+        router.accept(279);
+
+        assertEquals(1, target.size());
+        target.forEach(entry ->
+                assertEquals(278, entry));
     }
 }

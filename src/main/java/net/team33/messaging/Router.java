@@ -57,4 +57,11 @@ public class Router implements Consumer<Object> {
             addressees.clear();
         });
     }
+
+    public final void remove(final Consumer<?> consumer) {
+        monitor.run(() -> {
+            registered.values().forEach(v -> v.remove(consumer));
+            addressees.clear();
+        });
+    }
 }
